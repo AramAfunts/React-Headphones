@@ -2,7 +2,7 @@ import React from "react";
 
 export const TopBar = () => {
   return (
-    <div className="top-bar flex px-10 py-1">
+    <div className="top-bar">
       <div className="block">
         <p className="text-white">+001234567890</p>
       </div>
