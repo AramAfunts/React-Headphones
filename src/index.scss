@@ -48,9 +48,72 @@ header {
     img {
       @apply w-6 h-6 mr-2;
     }
+  }
+}
 
-    p {
-      @apply hover:text-gray-400 transition-colors;
+.wrapper {
+  @apply w-11/12 m-auto;
+}
+
+.hero {
+  background-color: #FCF0E4;
+  @apply w-full flex;
+
+  .left-side {
+    @apply w-2/5 py-20 px-14;
+
+    .hero-text {
+      @apply font-extrabold text-3xl;
+      color: #013D29;
+    }
+
+    .hero-btn {
+      background-color: #013D29;
+      @apply mt-5 py-3 px-6 rounded-3xl text-white;
+    }
+
+    .hero-btn:hover {
+      @apply bg-green-400 text-white py-4 px-7 rounded-full transition-all;
+    }
+  }
+
+  .right-side {
+    @apply w-3/5;
+
+    img {
+      @apply w-64 h-64 m-auto;
+    }
+  }
+}
+
+.products {
+  @apply w-full mt-5;
+
+  .top-block {
+    @apply justify-between flex;
+
+    h1 {
+      @apply font-extrabold text-2xl;
+    }
+
+    select {
+      @apply border border-black rounded-3xl pl-3 outline-none;
+    }
+  }
+
+  .products-list {
+    @apply flex my-10;
+
+    .product-card {
+      @apply w-[250px] h-[250px];
+
+      .product-image {
+        @apply bg-gray-200 w-full;
+
+        img {
+          @apply w-[200px] h-[200px] m-auto;
+        }
+      }
     }
   }
 }
