@@ -8,16 +8,15 @@ body {
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .top-bar {
-  background-color: #013D29;
+  background-color: #013d29;
   @apply flex px-10 py-1 w-full justify-between;
 }
 
 header {
-
   @apply flex my-5 px-10 justify-between;
 
   .store {
@@ -25,7 +24,7 @@ header {
   }
 
   .header-title {
-    color: #013D29;
+    color: #013d29;
     @apply font-bold text-xl ml-2 mt-1;
   }
 
@@ -42,7 +41,6 @@ header {
   }
 
   .header-right {
-
     @apply mt-1;
 
     img {
@@ -56,7 +54,7 @@ header {
 }
 
 .hero {
-  background-color: #FCF0E4;
+  background-color: #fcf0e4;
   @apply w-full flex;
 
   .left-side {
@@ -64,11 +62,11 @@ header {
 
     .hero-text {
       @apply font-extrabold text-3xl;
-      color: #013D29;
+      color: #013d29;
     }
 
     .hero-btn {
-      background-color: #013D29;
+      background-color: #013d29;
       @apply mt-5 py-3 px-6 rounded-3xl text-white;
     }
 
@@ -98,6 +96,55 @@ header {
 
     select {
       @apply border border-black rounded-3xl pl-3 outline-none;
+    }
+  }
+}
+
+.deals {
+  .deals-header {
+    color: #013d29;
+    @apply text-center m-10 font-extrabold text-2xl;
+  }
+
+  .deals-list {
+    @apply w-4/5 h-full m-auto;
+
+    .deal-item {
+      border: 2px solid #013d29;
+      @apply flex m-10 px-10 py-5 rounded-lg justify-between;
+
+      span {
+        color: #013d29;
+        @apply font-semibold text-xl;
+      }
+    }
+  }
+}
+
+.whats-new-section {
+  .product {
+    background-color: #f3ce64;
+    @apply mt-20 w-4/5 h-full m-auto flex;
+
+    .left-side {
+      @apply w-2/4 h-96 flex justify-center items-center;
+
+      h2 {
+        @apply font-bold text-5xl text-center;
+      }
+    }
+
+    button {
+      background-color: #013d29;
+      @apply mt-5 py-3 px-6 rounded-3xl text-white;
+    }
+  }
+
+  .right-side {
+    @apply w-2/4 h-full flex justify-center items-center;
+
+    img {
+      @apply w-96 h-96;
     }
   }
 }
