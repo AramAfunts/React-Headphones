@@ -2,8 +2,9 @@ import React from "react";
 import { TopBar } from "../components/TopBar";
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
+import { Card } from '../components/Card';
 
-const Home = () => {
+const Home = ({ products }) => {
   return (
     <>
       <TopBar />
@@ -25,6 +26,11 @@ const Home = () => {
                 Price: Highest to lowest
               </option>
             </select>
+          </div>
+          <div className="products-card">
+            {
+              products.map((item) => <Card key={item.key} name={item.name} price={item.price} image={item.image} />)
+            }
           </div>
         </div>
       </div>

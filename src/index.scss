@@ -98,6 +98,54 @@ header {
       @apply border border-black rounded-3xl pl-3 outline-none;
     }
   }
+
+  .products-card {
+    @apply w-full flex flex-wrap mx-3;
+  }
+
+  .card {
+    @apply w-[230px] mb-20 rounded-md mx-8 my-5 border border-gray-300 pt-1 pb-3 px-1 rounded-xl;
+
+    .image-block {
+
+      .favorite {
+        @apply flex justify-end;
+
+        img {
+          @apply w-5 h-5 m-3 cursor-pointer;
+        }
+      }
+
+      .image {
+        @apply flex justify-center items-center pb-3;
+
+        img {
+          @apply w-[150px] h-[130px];
+        }
+      }
+    }
+
+    .info-block {
+      @apply flex justify-between mx-2 my-2;
+
+      p {
+        @apply text-sm font-mono font-bold;
+      }
+    }
+
+    button {
+      @apply px-3 py-2 rounded-3xl ml-1 text-sm;
+
+      border: 1px solid #013d29;
+    }
+
+    button:hover {
+      @apply px-3 py-2 rounded-3xl ml-1 text-sm text-white transition-colors;
+
+      background-color: #013d29;
+    }
+
+  }
 }
 
 .deals {
