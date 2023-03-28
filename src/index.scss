@@ -196,3 +196,39 @@ header {
     }
   }
 }
+
+.account {
+  @apply m-auto w-[90%];
+    
+  h1 {
+      @apply text-2xl font-extrabold pb-2 border-b border-gray-300;
+    }
+
+  .favorite-items {
+    @apply flex flex-wrap;
+
+    .favorite-card {
+      @apply flex w-[420px] h-[140px] mx-20 my-5 bg-gray-200 border border-black;
+
+      .left-side {
+        @apply w-1/4 flex justify-center items-center;
+
+        img {
+          @apply w-28 h-28 ml-5 bg-white;
+        }
+      }
+
+      .right-side {
+        @apply w-3/4 pl-10 mt-4 pl-20;
+        
+        span {
+          @apply text-lg block my-2;
+        }
+
+        b {
+          @apply text-lg block my-2;
+        }
+      }
+    }
+  }
+}
