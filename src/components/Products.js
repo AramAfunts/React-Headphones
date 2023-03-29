@@ -1,12 +1,12 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const Products = ({ products, addToCart, addToFavorites }) => {
+export const Products = ({ products, addToCart, addToFavorites, sortingOption, handleSortingOption }) => {
   return (
     <div className="products">
       <div className="top-block">
         <h1>Headphones For You!</h1>
-        <select>
+        <select value={sortingOption} onChange={handleSortingOption}>
           <option value="Sort by" disabled>
             Sort by
           </option>

@@ -48,11 +48,35 @@ function App() {
     { key: 3, product: "Airpods Pro", location: "Goris (Armenia)" },
   ]);
 
-  React.useEffect(() => {
-    console.log(cart);
-    console.log(favorites);
-  }, [cart, favorites]);
+   const [sortingOption, setSortingOption] = React.useState('');
 
+  const numAscending = [...products].sort((a, b) => a.price - b.price);
+
+  const numDescending = [...products].sort((a, b) => b.price - a.price);
+
+  const strAscending = [...products].sort((a, b) => (a.name > b.name ? 1 : -1));
+
+  const handleSortingOption = (e) => {
+    setSortingOption(e.target.value);
+
+    switch(e.target.value) {
+      case 'Name': 
+        setProducts(strAscending);
+        break;
+
+      case 'Price: Lowest to highest':
+        setProducts(numAscending);
+        break;
+
+      case 'Price: Highest to lowest':
+        setProducts(numDescending);
+        break;
+
+      default:
+        setProducts(strAscending);
+    } 
+  }
+  
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
   };
@@ -71,6 +95,8 @@ function App() {
               products={products}
               addToCart={addToCart}
               addToFavorites={addToFavorites}
+              handleSortingOption={handleSortingOption}
+              sortingOption={sortingOption}
             />
           }
         />
