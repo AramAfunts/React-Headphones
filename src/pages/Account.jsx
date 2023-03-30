@@ -1,12 +1,8 @@
 import React from 'react';
-import { Header } from '../components/Header';
-import { TopBar } from '../components/TopBar';
 
 const Account = ({ favorites }) => {
   return (
     <div>
-        <TopBar />
-        <Header />
         <div className='account'>
             <h1>Favorite Products</h1>
             <div className='favorite-items'>

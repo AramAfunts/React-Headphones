@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ onCartChange }) => {
   return (
     <header>
       <Link to="/">
@@ -38,7 +38,7 @@ export const Header = () => {
               <p>Account</p>
             </li>
           </Link>
-          <li className="flex mx-4 cursor-pointer">
+          <li className="flex mx-4 cursor-pointer" onClick={onCartChange}>
             <img className="mr-2" src="img/cart.png" alt="cart" /> <p>Cart</p>
           </li>
         </ul>

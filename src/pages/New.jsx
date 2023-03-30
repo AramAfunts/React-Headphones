@@ -1,12 +1,8 @@
 import React from "react";
-import { TopBar } from "../components/TopBar";
-import { Header } from "../components/Header";
 
 const New = () => {
   return (
     <div className="whats-new-section">
-      <TopBar />
-      <Header />
       <div className="product">
         <div className="left-side">
           <h2>

@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import Deals from "./pages/Deals";
 import New from "./pages/New";
 import Account from "./pages/Account";
+import { Drawer } from "./components/Drawer";
+import { Header } from "./components/Header";
+import { TopBar } from "./components/TopBar";
 
 function App() {
   const [products, setProducts] = React.useState([
@@ -35,12 +38,25 @@ function App() {
     },
   ]);
 
-  const [cart, setCart] = React.useState([]);
+  const [cartOpened, setCartOpened] = React.useState(false);
+
+  const [cart, setCart] = React.useState([
+    { key: 1, name: "Airpods Pro", price: 79.99, image: "img/products/1.png" },
+    { key: 2, name: "Hama Fun", price: 9.99, image: "img/products/2.jpg" },
+    { key: 1, name: "Airpods Pro", price: 79.99, image: "img/products/1.png" },
+    { key: 2, name: "Hama Fun", price: 9.99, image: "img/products/2.jpg" },
+    { key: 1, name: "Airpods Pro", price: 79.99, image: "img/products/1.png" },
+    { key: 2, name: "Hama Fun", price: 9.99, image: "img/products/2.jpg" },
+  ]);
 
   const [favorites, setFavorites] = React.useState([
     { key: 1, name: "Airpods Pro", price: 79.99, image: "img/products/1.png" },
     { key: 2, name: "Hama Fun", price: 9.99, image: "img/products/2.jpg" },
   ]);
+
+  React.useEffect(() => {
+    console.log(cartOpened);
+  }, [ cartOpened ]);
 
   const [deals, setDeals] = React.useState([
     { key: 1, product: "Airpods Pro", location: "Yerevan (Armenia)" },
@@ -85,8 +101,15 @@ function App() {
     setFavorites((prev) => [...prev, product]);
   };
 
+  const onCartChange = () => {
+    setCartOpened(!cartOpened);
+  }
+
   return (
     <div className="App">
+      <TopBar />
+      { cartOpened && <Drawer cart={cart} onCloseClick={() => setCartOpened(false)} /> }
+      <Header onCartChange={onCartChange} />
       <Routes>
         <Route
           path="/"
@@ -97,6 +120,8 @@ function App() {
               addToFavorites={addToFavorites}
               handleSortingOption={handleSortingOption}
               sortingOption={sortingOption}
+              onCartChange={onCartChange}
+
             />
           }
         />
